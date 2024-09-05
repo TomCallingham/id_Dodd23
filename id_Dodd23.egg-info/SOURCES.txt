@@ -1,0 +1,6 @@
+README.md
+setup.py
+id_Dodd23.egg-info/PKG-INFO
+id_Dodd23.egg-info/SOURCES.txt
+id_Dodd23.egg-info/dependency_links.txt
+id_Dodd23.egg-info/top_level.txt
