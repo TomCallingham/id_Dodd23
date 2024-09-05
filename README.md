@@ -1,8 +1,15 @@
 # id_Dodd23
 A package to identify the group membership of stars, described in (Dodd23)[https://ui.adsabs.harvard.edu/abs/2023A%26A...670L...2D/abstract].
 
-## Groups IoM
+This package has utilities to:
+1. Transform from observables to the Galactocentric position-velocity used in Dodd23
+2. Calculate IoM used in Dodd23 (Energy, Lz, L perp)
+3. Identify the membership of the stars to substructures identified in Dodd23.
 
+See examples notebook.
+
+## Groups IoM
+Groups are defined.
 Groups | Mean [En,Lz,Lperp] | covariance
 --- | --- | ---
 Gaia Enceladus | [-1.17706147e+05 -3.38085108e+01  4.06814367e+02] | [[1.00254943e+08 1.17355768e+06 7.57200250e+04] [1.17355768e+06 4.35077348e+04 8.02911543e+03] [7.57200250e+04 8.02911543e+03 8.14407020e+04]]
@@ -32,3 +39,7 @@ Typhon | [-45156.52899756    610.44497946   2908.45803035] | [[ 1.12596616e+07  
 ED-5 | [-73131.75666162   -417.41420858   1360.2131682 ] | [[ 9.72579177e+06 -6.76349294e+04 -5.20633341e+04] [-6.76349294e+04  6.15159686e+03 -2.35515097e+03] [-5.20633341e+04 -2.35515097e+03  3.42501276e+03]]
 Group 27 | [-1.54229163e+05  2.19425858e+01  4.42123138e+01] | [[ 4.74530803e+04  5.52197029e+02 -4.13613842e+02] [ 5.52197029e+02  1.32709766e+02 -6.37222779e+01] [-4.13613842e+02 -6.37222779e+01  3.82679362e+01]]
 ED-6 | [-60528.1962893    -723.97224311   1782.30087621] | [[5474752.34150951   36149.29719424  126840.81949945] [  36149.29719424   41587.13708458   -8938.30664713] [ 126840.81949945   -8938.30664713   30249.31217349]]
+
+## Dependancies
+- Astropy
+- numpy
