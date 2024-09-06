@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "id_Dodd23"
-version = "0.1.9"
+version = "0.1.10"
 authors = [{ name = "Tom Callingham", email = "tom.m.callingham@gmail.com" }]
 description = "A package to classify halo stars into Dodd23 groups."
 readme = "README.md"
@@ -16,6 +16,8 @@ classifiers = [
 ]
 dependencies = ["numpy", "astropy"]
 
-[tool.setuptools]
-packages = { find = { where = ["."] } }
-include-package-data = true
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+id_Dodd23 = ["data/*.npy", "data/*.csv"]

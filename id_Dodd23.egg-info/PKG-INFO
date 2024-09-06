@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: id_Dodd23
-Version: 0.1.8
+Version: 0.1.10
 Summary: A package to classify halo stars into Dodd23 groups.
 Author-email: Tom Callingham <tom.m.callingham@gmail.com>
 Classifier: Programming Language :: Python :: 3
