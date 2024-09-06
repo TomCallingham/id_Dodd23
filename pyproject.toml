@@ -17,5 +17,4 @@ classifiers = [
 dependencies = ["numpy", "astropy"]
 
 [tool.setuptools]
-# packages = { find = { where = [ "src", ], exclude = [ "*.txt", "*.gitignore", "*.npy", "Old", ] } }
 packages = { find = { where = ["src"] } }
