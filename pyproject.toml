@@ -17,4 +17,4 @@ classifiers = [
 dependencies = ["numpy", "astropy"]
 
 [tool.setuptools]
-packages = { find = { where = ["src"] } }
+packages = { find = { where = ["."] } }
