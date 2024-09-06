@@ -1,5 +1,9 @@
+MANIFEST.in
 README.md
 pyproject.toml
+Data/original_Dodd23_Group_Covar_ELzLp.npy
+Data/original_Dodd23_Group_Mean_ELzLp.npy
+Data/original_Dodd23_Groups.npy
 id_Dodd23/Potential_H99.py
 id_Dodd23/__init__.py
 id_Dodd23/coordinates.py

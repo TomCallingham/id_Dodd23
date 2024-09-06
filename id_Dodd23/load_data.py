@@ -1,6 +1,6 @@
 import numpy as np
-import os
-data_folder =  str(os.path.dirname(os.path.dirname(__file__))) +"/Data/"
+from pkg_resources import resource_filename
+data_folder =  resource_filename(__name__,"../Data/")
 test_data_file = data_folder + "test_data.csv"
 # Load Fits and Groups
 named_Groups = np.load(data_folder+"original_Dodd23_Groups.npy")
