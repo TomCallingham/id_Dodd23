@@ -14,3 +14,8 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
+dependencies = ["numpy", "astropy"]
+
+[tool.setuptools]
+# packages = { find = { where = [ "src", ], exclude = [ "*.txt", "*.gitignore", "*.npy", "Old", ] } }
+packages = { find = { where = ["src"] } }
