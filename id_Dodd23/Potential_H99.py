@@ -74,4 +74,70 @@ def potential_bulge(pos):
 ################################################################################
 
 
+def vc(pos):
+    '''
+    Calculates the potential energy of a star given (x,y,z) coordinates,
+    centred on the Sun, via those Aminas FORTRAN functions that
+    I've translated here.
 
+    (x,y,z) are assumed to be in kpc
+    '''
+
+    # Compute the potentials due to the different components
+
+    # The disc contribution
+    vcf_disc = vc_disc(pos)
+    # The bulge contribution
+    vcf_bulge = vc_bulge(pos)
+    # The halo contribution
+    vcf_halo = vc_halo(pos)
+
+    # the sum of all these
+    vc_total = np.sqrt(vcf_disc**2 + vcf_bulge**2 + vcf_halo**2)
+
+    # Finally, return the total potential
+    return vc_total
+
+
+
+def vc_halo(pos):
+    '''
+    Calculates the potential contribution coming from the halo.
+    '''
+    c = Rvir/rs
+
+    # halculate the halo potential
+    phi_0 = G*M200/Rvir / (np.log(1+c)-c/(1+c))*c
+    r = np.linalg.norm(pos,axis=1)
+
+    return np.sqrt(r*(phi_0 * rs/r * (np.log(1 + r/rs)/r - 1/(rs+r))))
+
+
+def vc_disc(pos):
+    '''
+    Calculates the potential due to the disc
+    '''
+    # parameters
+    GMd = G * Mdisc
+
+    x,y,z = pos[:,0], pos[:,1], pos[:,2]
+    sqd = np.sqrt(z**2.0 + disc_b**2.0)
+
+    # square root of the density, probably
+    sqden1 = np.sqrt(x**2. + y**2.0 + (disc_a+sqd)**2.0)
+
+    # the potential of the disc
+    vc_d = np.sqrt(x*x+y*y)*(GMd/sqden1**3)
+
+    return vc_d
+
+
+def vc_bulge(pos):
+    # parameters
+    GMb = G * Mbulge
+
+    r = np.linalg.norm(pos,axis=1)
+
+    vc_b = np.sqrt(GMb*r)/(r+bulge_c)
+
+    return vc_b
