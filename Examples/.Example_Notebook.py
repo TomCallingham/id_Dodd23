@@ -175,15 +175,10 @@ axs[1].set_ylabel(label_dic["Lp"])
 v_toomre_circ = plt.Circle([vlsr.value,0],210,color="r",alpha=0.2)
 axs[2].add_artist(v_toomre_circ)
 
-# axs[2].set_xlim(lims["Dist"])
-# axs[2].set_ylim(lims["v_toomre"])
 axs[2].set_xlabel(label_dic["vT"])
 axs[2].set_ylabel(label_dic["vP"])
 
-# Collect legend handles/labels from one axis
 handles, labels = axs[0].get_legend_handles_labels()
-
-# Place legend beneath the subplots
 fig.legend(handles, labels, loc='lower center', ncol=4, bbox_to_anchor=(0.5, -0.2))
 
 plt.suptitle("Stars in Dodd23 Groups")
