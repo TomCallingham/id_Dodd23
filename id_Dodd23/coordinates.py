@@ -3,6 +3,7 @@ import astropy.units as u
 from astropy.coordinates import Galactocentric
 from astropy.table import Table, QTable
 import numpy as np
+from typing import Union
 
 u_kms = u.km / u.s
 vlsr = 232.8 * u_kms
@@ -10,7 +11,8 @@ U, V, W = 11.1 * u_kms, 12.24 * u_kms, 7.25 * u_kms
 v_sun = np.asarray([U.value, V.value + vlsr.value, W.value]) * u_kms
 
 
-def add_units(data: dict | Table | QTable) -> dict | Table | QTable:
+# def add_units(data: dict | Table | QTable) -> dict | Table | QTable:
+def add_units(data: Union[dict, Table, QTable]) -> Union[dict, Table, QTable]:
     data["ra"] = data["ra"] if isinstance(data["ra"], u.Quantity) else data["ra"] * u.degree
     data["dec"] = data["dec"] if isinstance(data["dec"], u.Quantity) else data["dec"] * u.degree
     data["distance"] = data["distance"] if isinstance(data["distance"], u.Quantity) else data["distance"] * u.kpc
